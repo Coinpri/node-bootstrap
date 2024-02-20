@@ -66,7 +66,7 @@ fi
 # Installing Tailscale
 echo "Installing Tailscale"
 curl -fsSL https://tailscale.com/install.sh | sh
-tailscale up
+sudo tailscale up
 sleep 1
 
 # Fetching Tailscale interface IP address
