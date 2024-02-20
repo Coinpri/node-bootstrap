@@ -122,3 +122,11 @@ if $install_grafana; then
   sudo systemctl enable grafana-server.service
   sudo systemctl start grafana-server.service
 fi
+
+sleep 1
+# Restarting the services ???
+
+sudo systemctl restart prometheus.service
+sudo systemctl restart prometheus-node-exporter.service
+if $install_grafana; then
+  sudo systemctl restart grafana-server.service
