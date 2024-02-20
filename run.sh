@@ -28,4 +28,11 @@ else
   echo "Skipping OS check as per -f flag."
 fi
 
-# Your script's operations go here
+# Perform system update and upgrade
+echo "Updating package lists..."
+sudo apt update
+
+echo "Upgrading packages..."
+sudo apt upgrade -y
+
+# Continue with the rest of your script's operations
