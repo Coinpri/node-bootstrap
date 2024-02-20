@@ -102,10 +102,14 @@ else
   echo "ARGS=\"--web.listen-address=$node_exporter_ip:9100\"" | sudo tee -a /etc/default/prometheus-node-exporter
 fi
 
-# Configuring Grafana's IP address if enabled
+# Configuring Grafana
 if $install_grafana; then
   echo "Setting Grafana's listen IP address to $grafana_ip"
   sudo sed -i "/;http_addr/c\http_addr = $grafana_ip" /etc/grafana/grafana.ini
+
+  echo "Enabling HTTPS for Grafana"
+  sudo sed -i "/;protocol/c\protocol = $grafana_ip" /etc/grafana/grafana.ini
+
 fi
 
 # Enabling and starting services
