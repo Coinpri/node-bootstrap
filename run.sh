@@ -108,7 +108,7 @@ if $install_grafana; then
   sudo sed -i "/;http_addr/c\http_addr = $grafana_ip" /etc/grafana/grafana.ini
 
   echo "Enabling HTTPS for Grafana"
-  sudo sed -i "/;protocol/c\protocol = $grafana_ip" /etc/grafana/grafana.ini
+  sudo sed -i "/;protocol/c\protocol = https" /etc/grafana/grafana.ini
 
 fi
 
